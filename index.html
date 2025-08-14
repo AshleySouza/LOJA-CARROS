@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoMax - Loja de Carros</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>AutoMax</h1>
+            </div>
+            <nav class="nav">
+                <a href="#home">Início</a>
+                <a href="#carros">Carros</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#contato">Contato</a>
+            </nav>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Encontre o Carro dos Seus Sonhos</h2>
+            <p>Os melhores carros seminovos e novos com garantia e qualidade</p>
+            <button class="cta-button" onclick="scrollToSection('carros')">Ver Carros</button>
+        </div>
+    </section>
+
+    <!-- Filtros -->
+    <section id="carros" class="filters-section">
+        <div class="container">
+            <h2>Nossos Carros</h2>
+            <div class="filters">
+                <select id="marcaFilter" onchange="filterCars()">
+                    <option value="">Todas as Marcas</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                </select>
+                
+                <select id="anoFilter" onchange="filterCars()">
+                    <option value="">Todos os Anos</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                </select>
+                
+                <select id="precoFilter" onchange="filterCars()">
+                    <option value="">Todas as Faixas</option>
+                    <option value="0-50000">Até R$ 50.000</option>
+                    <option value="50000-100000">R$ 50.000 - R$ 100.000</option>
+                    <option value="100000-999999">Acima de R$ 100.000</option>
+                </select>
+                
+                <button class="clear-filters" onclick="clearFilters()">Limpar Filtros</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid de Carros -->
+    <section class="cars-grid">
+        <div class="container">
+            <div id="carsContainer" class="cars-container">
+                <!-- Os carros serão inseridos aqui via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="carModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalContent">
+                <!-- Conteúdo do modal será inserido aqui -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Sobre -->
+    <section id="sobre" class="about">
+        <div class="container">
+            <h2>Sobre a AutoMax</h2>
+            <p>Há mais de 15 anos no mercado, a AutoMax é referência em venda de veículos seminovos e novos. Oferecemos qualidade, garantia e o melhor atendimento para você encontrar o carro ideal.</p>
+            <div class="features">
+                <div class="feature">
+                    <h3>Garantia</h3>
+                    <p>Todos os veículos com garantia de 6 meses</p>
+                </div>
+                <div class="feature">
+                    <h3>Financiamento</h3>
+                    <p>Financiamento facilitado com as melhores taxas</p>
+                </div>
+                <div class="feature">
+                    <h3>Test Drive</h3>
+                    <p>Agende seu test drive sem compromisso</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <form class="contact-form" onsubmit="submitForm(event)">
+                <input type="text" id="nome" placeholder="Seu Nome" required>
+                <input type="email" id="email" placeholder="Seu Email" required>
+                <input type="tel" id="telefone" placeholder="Seu Telefone" required>
+                <textarea id="mensagem" placeholder="Sua Mensagem" required></textarea>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AutoMax</h3>
+                    <p>Sua loja de confiança para carros seminovos e novos</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p>📞 (11) 970648133</p>
+                    <p>📧 contato@automax.com.br</p>
+                    <p>📍 Rua das Flores, 123 - São Paulo</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Horário</h3>
+                    <p>Segunda a Sexta: 8h às 18h</p>
+                    <p>Sábado: 8h às 16h</p>
+                    <p>Domingo: Fechado</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AutoMax. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
